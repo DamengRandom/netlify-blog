@@ -14,5 +14,7 @@ describe("Layout", () => {
     expect(layout).toMatchSnapshot()
   })
 
-  it("renders ", () => {})
+  it("renders ", () => {
+    expect(true).toBe(true)
+  })
 })

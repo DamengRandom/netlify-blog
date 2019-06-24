@@ -1,8 +1,11 @@
-const dotenv = require("dotenv")
+let env = process.env.NODE_ENV || "development"
+require("dotenv").config({ path: `./.env.${env}` })
 
-if (process.env.NODE_ENV !== "production") {
-  dotenv.config()
-}
+// const dotenv = require("dotenv")
+
+// if (process.env.NODE_ENV !== "production") {
+//   dotenv.config()
+// }
 
 module.exports = {
   siteMetadata: {
@@ -84,7 +87,7 @@ module.exports = {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `73oxklb7t4gu`,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        accessToken: process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN,
       },
     },
     `@contentful/gatsby-transformer-contentful-richtext`,
